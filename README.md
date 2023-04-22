@@ -1,4 +1,4 @@
-# <h1>EX02 API Clinica Dental</h1>
+# <h1 align="center">EX02 API Clinica Dental</h1>
 
 <h3>1. Introducción</h3>
 <p>En el presente proyecto del Bootcamp Full Stack correspondiente a la parte Spring Framework se espera que el alumno demuestre todos los conocimientos adquiridos en desarrollo de APIs. </p>
