@@ -43,3 +43,597 @@ Deﬁne los endpoints necesarios para que el backend pueda cumplir con lo establ
  <li>CRUD de los diferentes modelos.</li>
  <li>Excelente Readme (IMPORTANTE). </li>
  </ul>
+ 
+ #
+ <h1 align="center">Postman</h1>
+ 
+ # Project: ClinicaDental
+# 📁 Collection: Patient 
+
+
+## End-point: GET_BY_ID
+### Method: GET
+>```
+>localhost:8181/api/patient/3
+>```
+### Response: 200
+```json
+{
+    "id": 3,
+    "dni": "7889956D",
+    "nameSurname": "Encarna Sastre",
+    "mail": "mail3@gmail.com"
+}
+```
+
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+## End-point: GET_ALL
+### Method: GET
+>```
+>localhost:8181/api/patient
+>```
+### Body (**raw**)
+
+```json
+
+```
+
+### Response: 200
+```json
+[
+    {
+        "id": 1,
+        "dni": "1478935B",
+        "nameSurname": "Palmira Romia",
+        "mail": "mail1@hotmail.com"
+    },
+    {
+        "id": 2,
+        "dni": "4178958C",
+        "nameSurname": "Miguel Sastre",
+        "mail": "mail2@gmail.com"
+    },
+    {
+        "id": 3,
+        "dni": "7889956D",
+        "nameSurname": "Encarna Sastre",
+        "mail": "mail3@gmail.com"
+    }
+]
+```
+
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+## End-point: UPDATE_Patient
+### Method: PUT
+>```
+>localhost:8181/api/patient
+>```
+### Body (**raw**)
+
+```json
+{
+    "id": 2,
+    "dni": "4178958C",
+    "nameSurname": "Miguel Sastre - Modificado",
+    "mail": "mail2@gmail.com",
+    "oldPsw":"psw2",
+    "newPsw":"psw2"
+}
+```
+
+### Response: 200
+```json
+{
+    "id": 2,
+    "dni": "4178958C",
+    "nameSurname": "Miguel Sastre - Modificado",
+    "mail": "mail2@gmail.com"
+}
+```
+
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+## End-point: CREATE
+### Method: POST
+>```
+>localhost:8181/api/patient
+>```
+### Body (**raw**)
+
+```json
+    {
+        "dni": "1234789C",
+        "nameSurname": "{{$randomFullName}}",
+        "mail": "{{$randomEmail}}",
+        "psw": "pswnueva"
+
+    }
+```
+
+### Response: 200
+```json
+{
+    "id": 5,
+    "dni": "1234789C",
+    "nameSurname": "Dewey Hauck I",
+    "mail": "Sammie.Lind@gmail.com"
+}
+```
+
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+## End-point: DELETE
+### Method: DELETE
+>```
+>localhost:8181/api/patient/5
+>```
+### Response: 200
+```json
+null
+```
+
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+# 📁 Collection: Dentist 
+
+
+## End-point: GET_ALL
+### Method: GET
+>```
+>localhost:8181/api/dentist
+>```
+### Response: 200
+```json
+[
+    {
+        "id": 1,
+        "dni": "1234578C",
+        "nameSurname": "Ripley Romia",
+        "mail": "mail4@hotmail.com",
+        "speciality": "General Dentist"
+    },
+    {
+        "id": 2,
+        "dni": "4775528B",
+        "nameSurname": "Nela Romia",
+        "mail": "mail5@hotmail.com",
+        "speciality": "Orthodontist"
+    },
+    {
+        "id": 3,
+        "dni": "4774411T",
+        "nameSurname": "Encarna Segura",
+        "mail": "mail8@hotmail.com",
+        "speciality": "Periodontist"
+    }
+]
+```
+
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+## End-point: GET_BY_NAME
+### Method: GET
+>```
+>localhost:8181/api/dentist/nameSurname/Nela Romia
+>```
+### Response: 200
+```json
+{
+    "id": 2,
+    "dni": "4775528B",
+    "nameSurname": "Nela Romia",
+    "mail": "mail5@hotmail.com",
+    "speciality": "Orthodontist"
+}
+```
+
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+## End-point: GET_BY_ID
+### Method: GET
+>```
+>localhost:8181/api/dentist/3
+>```
+### Response: 200
+```json
+{
+    "id": 3,
+    "dni": "4774411T",
+    "nameSurname": "Encarna Segura",
+    "mail": "mail8@hotmail.com",
+    "speciality": "Periodontist"
+}
+```
+
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+## End-point: CREATE
+### Method: POST
+>```
+>localhost:8181/api/dentist
+>```
+### Body (**raw**)
+
+```json
+    {
+        "dni": "1477898T",
+        "nameSurname": "{{$randomFullName}}",
+        "mail": "{{$randomEmail}}",
+        "psw": "psw10",
+        "speciality": "General Dentist"
+        
+    }
+```
+
+### Response: 200
+```json
+{
+    "id": 4,
+    "dni": "1477898T",
+    "nameSurname": "Tabitha Lemke",
+    "mail": "Freda.Mosciski74@hotmail.com",
+    "speciality": "General Dentist"
+}
+```
+
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+## End-point: UPDATE
+### Method: PUT
+>```
+>localhost:8181/api/dentist
+>```
+### Body (**raw**)
+
+```json
+{
+    "id": 3,
+    "dni": "4774411T",
+    "nameSurname": "Encarna Segura - modificado",
+    "mail": "mail8@hotmail.com- modificado",
+    "speciality": "Periodontist",
+    "oldPsw": "psw6",
+    "newPsw": "new psw"
+}
+```
+
+### Response: 200
+```json
+{
+    "id": 3,
+    "dni": "4774411T",
+    "nameSurname": "Encarna Segura - modificado",
+    "mail": "mail8@hotmail.com- modificado",
+    "speciality": "Periodontist"
+}
+```
+
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+## End-point: DELETE
+### Method: DELETE
+>```
+>localhost:8181/api/dentist/4
+>```
+### Response: 200
+```json
+null
+```
+
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+# 📁 Collection: Appointment 
+
+
+## End-point: CREATE
+### Method: POST
+>```
+>{{host}}/appointment/1
+>```
+### Body (**raw**)
+
+```json
+    {
+        "dateAppointment": "2023-04-23T14:30:00",
+        "idDentist": 2
+    }
+```
+
+### Response: 200
+```json
+{
+    "id": 5,
+    "dateAppointment": "2023-04-23T14:30:00",
+    "infoDentist": {
+        "id": 1,
+        "nameSurname": "Ripley Romia",
+        "mail": "mail4@hotmail.com",
+        "speciality": "General Dentist"
+    }
+}
+```
+
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+## End-point: GET_ALL
+### Method: GET
+>```
+>{{host}}/appointment
+>```
+### Response: 200
+```json
+[
+    {
+        "id": 1,
+        "dateAppointment": "2023-04-19T15:30:00",
+        "dentistDTO": {
+            "id": 3,
+            "dni": "4774411T",
+            "nameSurname": "Encarna Segura - modificado",
+            "mail": "mail8@hotmail.com- modificado",
+            "speciality": "Periodontist"
+        },
+        "patientDTO": {
+            "id": 1,
+            "dni": "1478935B",
+            "nameSurname": "Palmira Romia",
+            "mail": "mail1@hotmail.com"
+        }
+    },
+    {
+        "id": 2,
+        "dateAppointment": "2023-05-21T12:35:00",
+        "dentistDTO": {
+            "id": 3,
+            "dni": "4774411T",
+            "nameSurname": "Encarna Segura - modificado",
+            "mail": "mail8@hotmail.com- modificado",
+            "speciality": "Periodontist"
+        },
+        "patientDTO": {
+            "id": 2,
+            "dni": "4178958C",
+            "nameSurname": "Miguel Sastre - Modificado",
+            "mail": "mail2@gmail.com"
+        }
+    },
+    {
+        "id": 3,
+        "dateAppointment": "2023-05-05T13:05:00",
+        "dentistDTO": {
+            "id": 1,
+            "dni": "1234578C",
+            "nameSurname": "Ripley Romia",
+            "mail": "mail4@hotmail.com",
+            "speciality": "General Dentist"
+        },
+        "patientDTO": {
+            "id": 3,
+            "dni": "7889956D",
+            "nameSurname": "Encarna Sastre",
+            "mail": "mail3@gmail.com"
+        }
+    },
+    {
+        "id": 4,
+        "dateAppointment": "2023-04-23T14:30:00",
+        "dentistDTO": {
+            "id": 1,
+            "dni": "1234578C",
+            "nameSurname": "Ripley Romia",
+            "mail": "mail4@hotmail.com",
+            "speciality": "General Dentist"
+        },
+        "patientDTO": {
+            "id": 2,
+            "dni": "4178958C",
+            "nameSurname": "Miguel Sastre - Modificado",
+            "mail": "mail2@gmail.com"
+        }
+    },
+    {
+        "id": 5,
+        "dateAppointment": "2023-04-23T14:30:00",
+        "dentistDTO": {
+            "id": 1,
+            "dni": "1234578C",
+            "nameSurname": "Ripley Romia",
+            "mail": "mail4@hotmail.com",
+            "speciality": "General Dentist"
+        },
+        "patientDTO": {
+            "id": 2,
+            "dni": "4178958C",
+            "nameSurname": "Miguel Sastre - Modificado",
+            "mail": "mail2@gmail.com"
+        }
+    }
+]
+```
+
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+## End-point: GET_BY_ID
+### Method: GET
+>```
+>{{host}}/appointment/1
+>```
+### Response: 200
+```json
+{
+    "id": 1,
+    "dateAppointment": "2023-04-19T15:30:00",
+    "dentistDTO": {
+        "id": 3,
+        "dni": "4774411T",
+        "nameSurname": "Encarna Segura - modificado",
+        "mail": "mail8@hotmail.com- modificado",
+        "speciality": "Periodontist"
+    },
+    "patientDTO": {
+        "id": 1,
+        "dni": "1478935B",
+        "nameSurname": "Palmira Romia",
+        "mail": "mail1@hotmail.com"
+    }
+}
+```
+
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+## End-point: GET_BY_DNI_Patient
+### Method: GET
+>```
+>{{host}}/appointment/dni/1478935B
+>```
+### Response: 200
+```json
+[
+    {
+        "id": 1,
+        "dateAppointment": "2023-04-19T15:30:00",
+        "infoDentist": {
+            "id": 3,
+            "nameSurname": "Encarna Segura - modificado",
+            "mail": "mail8@hotmail.com- modificado",
+            "speciality": "Periodontist"
+        }
+    },
+    {
+        "id": 6,
+        "dateAppointment": "2023-04-23T14:30:00",
+        "infoDentist": {
+            "id": 1,
+            "nameSurname": "Ripley Romia",
+            "mail": "mail4@hotmail.com",
+            "speciality": "General Dentist"
+        }
+    },
+    {
+        "id": 7,
+        "dateAppointment": "2023-04-23T14:30:00",
+        "infoDentist": {
+            "id": 1,
+            "nameSurname": "Ripley Romia",
+            "mail": "mail4@hotmail.com",
+            "speciality": "General Dentist"
+        }
+    }
+]
+```
+
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+## End-point: GET_BY_ID_Dentist
+### Method: GET
+>```
+>{{host}}/appointment/dentist/1
+>```
+### Response: 200
+```json
+[
+    {
+        "id": 3,
+        "dateAppointment": "2023-05-05T13:05:00",
+        "patientDTO": {
+            "id": 3,
+            "dni": "7889956D",
+            "nameSurname": "Encarna Sastre",
+            "mail": "mail3@gmail.com"
+        }
+    },
+    {
+        "id": 4,
+        "dateAppointment": "2023-04-23T14:30:00",
+        "patientDTO": {
+            "id": 2,
+            "dni": "4178958C",
+            "nameSurname": "Miguel Sastre - Modificado",
+            "mail": "mail2@gmail.com"
+        }
+    },
+    {
+        "id": 5,
+        "dateAppointment": "2023-04-23T14:30:00",
+        "patientDTO": {
+            "id": 2,
+            "dni": "4178958C",
+            "nameSurname": "Miguel Sastre - Modificado",
+            "mail": "mail2@gmail.com"
+        }
+    },
+    {
+        "id": 6,
+        "dateAppointment": "2023-04-23T14:30:00",
+        "patientDTO": {
+            "id": 1,
+            "dni": "1478935B",
+            "nameSurname": "Palmira Romia",
+            "mail": "mail1@hotmail.com"
+        }
+    },
+    {
+        "id": 7,
+        "dateAppointment": "2023-04-23T14:30:00",
+        "patientDTO": {
+            "id": 1,
+            "dni": "1478935B",
+            "nameSurname": "Palmira Romia",
+            "mail": "mail1@hotmail.com"
+        }
+    }
+]
+```
+
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+## End-point: UPDATE
+### Method: PUT
+>```
+>{{host}}/appointment/1
+>```
+### Body (**raw**)
+
+```json
+{
+    "idAppointment": 1,
+    "psw": "1234879",
+    "newDate": "2023-06-25T15:30:00",
+    "idDentist": 2
+}
+```
+
+### Response: 200
+```json
+{
+    "id": 1,
+    "dateAppointment": "2023-06-25T15:30:00",
+    "infoDentist": {
+        "id": 2,
+        "nameSurname": "Nela Romia",
+        "mail": "mail5@hotmail.com",
+        "speciality": "Orthodontist"
+    }
+}
+```
+
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+
