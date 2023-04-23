@@ -1,14 +1,14 @@
 /**
  * 
  */
-package com.crud.h2.dao;
+package com.crud.mysql.dao;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.crud.h2.model.entity.Appointment;
+import com.crud.mysql.model.entity.Appointment;
 
 /**
  * @author Palmira

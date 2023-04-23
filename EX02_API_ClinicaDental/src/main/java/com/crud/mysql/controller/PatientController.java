@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.crud.h2.controller;
+package com.crud.mysql.controller;
 
 import java.util.List;
 
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.crud.h2.model.dto.PatientDTO;
-import com.crud.h2.model.dto.RequestUpdatePatientDTO;
-import com.crud.h2.service.IPatientService;
+import com.crud.mysql.model.dto.PatientDTO;
+import com.crud.mysql.model.dto.RequestUpdatePatientDTO;
+import com.crud.mysql.service.IPatientService;
 
 /**
  * @author Palmira

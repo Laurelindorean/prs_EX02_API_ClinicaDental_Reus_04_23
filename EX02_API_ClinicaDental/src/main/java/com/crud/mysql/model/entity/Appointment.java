@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.crud.h2.model.entity;
+package com.crud.mysql.model.entity;
 
 import java.time.LocalDateTime;
 

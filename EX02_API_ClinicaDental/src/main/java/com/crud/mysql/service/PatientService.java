@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.crud.h2.service;
+package com.crud.mysql.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,11 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import com.crud.h2.dao.IPatientDAO;
-import com.crud.h2.model.dto.PatientDTO;
-import com.crud.h2.model.dto.RequestCreatePatientDTO;
-import com.crud.h2.model.dto.RequestUpdatePatientDTO;
-import com.crud.h2.model.entity.Patient;
+import com.crud.mysql.dao.IPatientDAO;
+import com.crud.mysql.model.dto.PatientDTO;
+import com.crud.mysql.model.dto.RequestCreatePatientDTO;
+import com.crud.mysql.model.dto.RequestUpdatePatientDTO;
+import com.crud.mysql.model.entity.Patient;
 
 import jakarta.security.auth.message.AuthException;
 

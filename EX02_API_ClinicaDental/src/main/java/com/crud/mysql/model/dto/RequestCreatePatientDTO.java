@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.crud.h2.model.dto;
+package com.crud.mysql.model.dto;
 
 /**
  * @author Palmira

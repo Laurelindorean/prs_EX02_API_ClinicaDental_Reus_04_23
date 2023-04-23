@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.crud.h2.service;
+package com.crud.mysql.service;
 
 /**
  * @author Palmira

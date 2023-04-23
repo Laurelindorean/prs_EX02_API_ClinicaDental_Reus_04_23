@@ -1,13 +1,13 @@
 /**
  * 
  */
-package com.crud.h2.service;
+package com.crud.mysql.service;
 
 import java.util.List;
 
-import com.crud.h2.model.dto.PatientDTO;
-import com.crud.h2.model.dto.RequestCreatePatientDTO;
-import com.crud.h2.model.dto.RequestUpdatePatientDTO;
+import com.crud.mysql.model.dto.PatientDTO;
+import com.crud.mysql.model.dto.RequestCreatePatientDTO;
+import com.crud.mysql.model.dto.RequestUpdatePatientDTO;
 
 /**
  * @author Palmira

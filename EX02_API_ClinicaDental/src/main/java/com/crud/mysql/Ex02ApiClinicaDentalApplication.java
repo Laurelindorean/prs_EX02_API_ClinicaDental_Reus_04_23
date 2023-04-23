@@ -1,4 +1,4 @@
-package com.crud.h2;
+package com.crud.mysql;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
