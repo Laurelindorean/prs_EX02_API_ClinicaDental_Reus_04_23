@@ -1,72 +1,66 @@
 /**
  * 
  */
-package com.crud.mysql.model.dto.patient;
+package com.crud.mysql.model.dto.dentist;
 
 /**
  * @author Palmira
  *
  */
-public class RequestCreatePatientDTO {
-
-	private String dni;
+public class RequestInfoDentist {
+	
+	private int id;
 	private String nameSurname;
 	private String mail;
-	private String psw;
-
+	private String speciality;
 	/**
-	 * @return the dni
+	 * @return the id
 	 */
-	public String getDni() {
-		return dni;
+	public int getId() {
+		return id;
 	}
-
 	/**
-	 * @param dni the dni to set
+	 * @param id the id to set
 	 */
-	public void setDni(String dni) {
-		this.dni = dni;
+	public void setId(int id) {
+		this.id = id;
 	}
-
 	/**
 	 * @return the nameSurname
 	 */
 	public String getNameSurname() {
 		return nameSurname;
 	}
-
 	/**
 	 * @param nameSurname the nameSurname to set
 	 */
 	public void setNameSurname(String nameSurname) {
 		this.nameSurname = nameSurname;
 	}
-
 	/**
 	 * @return the mail
 	 */
 	public String getMail() {
 		return mail;
 	}
-
 	/**
 	 * @param mail the mail to set
 	 */
 	public void setMail(String mail) {
 		this.mail = mail;
 	}
-
 	/**
-	 * @return the psw
+	 * @return the speciality
 	 */
-	public String getPsw() {
-		return psw;
+	public String getSpeciality() {
+		return speciality;
+	}
+	/**
+	 * @param speciality the speciality to set
+	 */
+	public void setSpeciality(String speciality) {
+		this.speciality = speciality;
 	}
 
-	/**
-	 * @param psw the psw to set
-	 */
-	public void setPsw(String psw) {
-		this.psw = psw;
-	}
+	
 }

@@ -12,12 +12,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import com.crud.mysql.dao.IPatientDAO;
-import com.crud.mysql.model.dto.PatientDTO;
-import com.crud.mysql.model.dto.RequestCreatePatientDTO;
-import com.crud.mysql.model.dto.RequestUpdatePatientDTO;
+import com.crud.mysql.model.dto.patient.PatientDTO;
+import com.crud.mysql.model.dto.patient.RequestCreatePatientDTO;
+import com.crud.mysql.model.dto.patient.RequestUpdatePatientDTO;
 import com.crud.mysql.model.entity.Patient;
-
-import jakarta.security.auth.message.AuthException;
 
 /**
  * @author Palmira
@@ -28,7 +26,6 @@ public class PatientService implements IPatientService {
 
 	@Autowired
 	private IPatientDAO patientDAO;
-	
 
 	@Override
 	public PatientDTO createPatient(RequestCreatePatientDTO request) {
@@ -36,11 +33,11 @@ public class PatientService implements IPatientService {
 		Patient patientEntity = new Patient();
 		patientEntity.setDni(request.getDni());
 		patientEntity.setNameSurname(request.getNameSurname());
-		patientEntity.setMail(request.getEmail());
+		patientEntity.setMail(request.getMail());
 		patientEntity.setPsw(request.getPsw());
-		
+
 		this.patientDAO.save(patientEntity);
-		
+
 		return this.mapEntityToDTO(patientEntity);
 	}
 
@@ -48,7 +45,7 @@ public class PatientService implements IPatientService {
 	public PatientDTO patientById(int id) {
 		return this.mapEntityToDTO(this.patientDAO.findById(id).orElseThrow());
 	}
-	
+
 	@Override
 	public List<PatientDTO> listPatient() {
 		List<PatientDTO> listPatientDTO = new ArrayList<>();
@@ -61,16 +58,17 @@ public class PatientService implements IPatientService {
 		try {
 			Patient patientEntity = this.patientDAO.findById(patient.getId()).orElseThrow();
 
+			//We use this to validate if the user is allowed to make changes
 			if (!patientEntity.getPsw().equals(patient.getOldPsw())) {
 				throw new RuntimeException("Wrong password");
 			}
-			
+
 			patientEntity.setDni(patient.getDni());
 			patientEntity.setMail(patient.getMail());
 			patientEntity.setNameSurname(patient.getNameSurname());
 			patientEntity.setPsw(patient.getNewPsw());
 			this.patientDAO.save(patientEntity);
-			
+
 			return this.mapEntityToDTO(patientEntity);
 		} catch (NoSuchElementException e) {
 			throw new RuntimeException("Not found user");
@@ -79,35 +77,36 @@ public class PatientService implements IPatientService {
 
 	@Override
 	public void deletePatient(int id) {
-		// TODO Auto-generated method stub
-
+		patientDAO.deleteById(id);
 	}
+
+	//A validation to check if one of the camps are blank
 	private void validateRequest(RequestCreatePatientDTO request) {
-		if(!StringUtils.hasText(request.getDni())) {
+		if (!StringUtils.hasText(request.getDni())) {
 			throw new RuntimeException("DNI is mandatory");
 		}
-		
-		if(!StringUtils.hasText(request.getEmail())) {
+
+		if (!StringUtils.hasText(request.getMail())) {
 			throw new RuntimeException("Email is mandatory");
 		}
-		
-		if(!StringUtils.hasText(request.getNameSurname())) {
+
+		if (!StringUtils.hasText(request.getNameSurname())) {
 			throw new RuntimeException("Name is mandatory");
 		}
-		
-		if(!StringUtils.hasText(request.getPsw())) {
+
+		if (!StringUtils.hasText(request.getPsw())) {
 			throw new RuntimeException("Password is mandatory");
 		}
 	}
 
 	private PatientDTO mapEntityToDTO(Patient patientEntity) {
 		PatientDTO patientDTO = new PatientDTO();
-		
+
 		patientDTO.setId(patientEntity.getId());
 		patientDTO.setNameSurname(patientEntity.getNameSurname());
 		patientDTO.setDni(patientEntity.getDni());
 		patientDTO.setMail(patientEntity.getMail());
-		
+
 		return patientDTO;
 	}
 }

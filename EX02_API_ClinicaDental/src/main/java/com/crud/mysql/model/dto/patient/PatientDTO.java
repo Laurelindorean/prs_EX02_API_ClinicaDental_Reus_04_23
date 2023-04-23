@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.crud.mysql.model.dto;
+package com.crud.mysql.model.dto.patient;
 
 /**
  * @author Palmira

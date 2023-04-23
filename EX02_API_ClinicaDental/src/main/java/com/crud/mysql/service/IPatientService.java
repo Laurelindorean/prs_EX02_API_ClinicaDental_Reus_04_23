@@ -5,9 +5,9 @@ package com.crud.mysql.service;
 
 import java.util.List;
 
-import com.crud.mysql.model.dto.PatientDTO;
-import com.crud.mysql.model.dto.RequestCreatePatientDTO;
-import com.crud.mysql.model.dto.RequestUpdatePatientDTO;
+import com.crud.mysql.model.dto.patient.PatientDTO;
+import com.crud.mysql.model.dto.patient.RequestCreatePatientDTO;
+import com.crud.mysql.model.dto.patient.RequestUpdatePatientDTO;
 
 /**
  * @author Palmira
