@@ -13,6 +13,27 @@ public class RequestInfoDentist {
 	private String nameSurname;
 	private String mail;
 	private String speciality;
+	
+	
+	/**
+	 * 
+	 */
+	public RequestInfoDentist() {
+		super();
+	}
+	/**
+	 * @param id
+	 * @param nameSurname
+	 * @param mail
+	 * @param speciality
+	 */
+	public RequestInfoDentist(int id, String nameSurname, String mail, String speciality) {
+		super();
+		this.id = id;
+		this.nameSurname = nameSurname;
+		this.mail = mail;
+		this.speciality = speciality;
+	}
 	/**
 	 * @return the id
 	 */

@@ -58,14 +58,14 @@ public class AppointmentController {
 		return this.appointmentService.findAppointmentByDentistId(idDentist);
 	}
 	
-	@PutMapping("/appointment/{idAppointment}")
-	public AppointmentUserDTO updateAppointment(@PathVariable int idAppointment
+	@PutMapping("/appointment/{idUser}")
+	public AppointmentUserDTO updateAppointment(@PathVariable int idUser
 			, @RequestBody RequestUpdateAppointmentDTO request) {
-		return this.appointmentService.updateAppoitment(idAppointment, request);
+		return this.appointmentService.updateAppoitment(idUser, request);
 	}
 	
 	@DeleteMapping("/appointment/{idAppointment}")
-	public AppointmentUserDTO deleteAppointment(@PathVariable int idAppointment) {
-		return this.appointmentService.deleteAppoitment(idAppointment);
+	public void deleteAppointment(@PathVariable int idAppointment) {
+		this.appointmentService.deleteAppoitment(idAppointment);
 	}
 }

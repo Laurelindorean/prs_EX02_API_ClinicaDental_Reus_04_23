@@ -18,7 +18,7 @@ import com.crud.mysql.model.dto.appointment.RequestUpdateAppointmentDTO;
 public interface IAppointmentService {
 
 	//CRUD Methods
-	public List<AppointmentUserDTO> findAppointmentByPatientDni(String patient_id);
+	public List<AppointmentUserDTO> findAppointmentByPatientDni(String dni);
 	
 	public List<AppointmentDentistDTO> findAppointmentByDentistId(int dentist_id);
 	
@@ -28,8 +28,8 @@ public interface IAppointmentService {
 	
 	public AppointmentUserDTO createAppointment(int idUser, RequestCreateAppointmentDTO request);
 
-	public AppointmentUserDTO updateAppoitment(int idAppointment, RequestUpdateAppointmentDTO request);
+	public AppointmentUserDTO updateAppoitment(int idUser, RequestUpdateAppointmentDTO request);
 
-	public AppointmentUserDTO deleteAppoitment(int idAppointment);
+	public void deleteAppoitment(int idAppointment);
 	
 }

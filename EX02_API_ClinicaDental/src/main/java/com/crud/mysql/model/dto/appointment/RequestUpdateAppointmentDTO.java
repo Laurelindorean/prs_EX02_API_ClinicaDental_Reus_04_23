@@ -4,23 +4,23 @@ import java.time.LocalDateTime;
 
 public class RequestUpdateAppointmentDTO {
 
-	private int idUser;
+	private int idAppointment;
 	private String psw;
 	private LocalDateTime newDate;
 	private int idDentist;
 
 	/**
-	 * @return the idUser
+	 * @return the idAppointment
 	 */
-	public int getIdUser() {
-		return idUser;
+	public int getIdAppointment() {
+		return idAppointment;
 	}
 
 	/**
-	 * @param idUser the idUser to set
+	 * @param idAppointment the idAppointment to set
 	 */
-	public void setIdUser(int idUser) {
-		this.idUser = idUser;
+	public void setIdAppointment(int idAppointment) {
+		this.idAppointment = idAppointment;
 	}
 
 	/**

@@ -16,6 +16,26 @@ public class AppointmentUserDTO {
 	private int id;
 	private LocalDateTime dateAppointment;
 	private RequestInfoDentist infoDentist;
+	
+	
+	/**
+	 * 
+	 */
+	public AppointmentUserDTO() {
+		super();
+	}
+	/**
+	 * @param id
+	 * @param dateAppointment
+	 * @param infoDentist
+	 */
+	public AppointmentUserDTO(int id, LocalDateTime dateAppointment, int idDentist, String nameSurname, String mail, String speciality) {
+		super();
+		this.id = id;
+		this.dateAppointment = dateAppointment;
+		this.infoDentist = new RequestInfoDentist(idDentist, nameSurname, mail, speciality);
+	}
+	
 	/**
 	 * @return the id
 	 */
